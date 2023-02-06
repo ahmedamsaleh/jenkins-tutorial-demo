@@ -20,10 +20,10 @@ mavenJob('Jenkins Tutorial Demo - Library 1 - Release (DSL)') {
     scm {
         git {
             remote {
-                url 'git@gitlab.com:SvenWoltmann/jenkins-tutorial-demo.git'
+                url 'git@github.com:ahmedamsaleh/jenkins-tutorial-demo.git'
             }
 
-            branch 'origin/master'
+            branch 'origin/main'
 
             // Add extensions 'SparseCheckoutPaths' and 'PathRestriction'
             def nodeBuilder = NodeBuilder.newInstance()
@@ -39,7 +39,7 @@ mavenJob('Jenkins Tutorial Demo - Library 1 - Release (DSL)') {
             }
 
             extensions {
-                localBranch 'master'
+                localBranch 'main'
             }
         }
     }
@@ -104,7 +104,7 @@ mavenJob('Jenkins Tutorial Demo - Library 1 - Release (DSL)') {
             mavenInstallation 'Latest'
             goals 'scm:checkin ' +
                     '-Dmessage="Release version ${project.artifactId}:${releaseVersion}" ' +
-                    '-DdeveloperConnectionUrl=scm:git:git@gitlab.com:SvenWoltmann/jenkins-tutorial-demo.git'
+                    '-DdeveloperConnectionUrl=scm:git:git@github.com:ahmedamsaleh/jenkins-tutorial-demo.git'
             rootPOM "library1/pom.xml"
         }
 
@@ -112,7 +112,7 @@ mavenJob('Jenkins Tutorial Demo - Library 1 - Release (DSL)') {
             mavenInstallation 'Latest'
             goals 'scm:tag ' +
                     '-Dtag=${project.artifactId}-${releaseVersion} ' +
-                    '-DdeveloperConnectionUrl=scm:git:git@gitlab.com:SvenWoltmann/jenkins-tutorial-demo.git'
+                    '-DdeveloperConnectionUrl=scm:git:git@github.com:ahmedamsaleh/jenkins-tutorial-demo.git'
             rootPOM "library1/pom.xml"
         }
 
@@ -128,7 +128,7 @@ mavenJob('Jenkins Tutorial Demo - Library 1 - Release (DSL)') {
             mavenInstallation 'Latest'
             goals 'scm:checkin ' +
                     '-Dmessage="Switch to next snapshot version: ${project.artifactId}:${nextSnapshotVersion}" ' +
-                    '-DdeveloperConnectionUrl=scm:git:git@gitlab.com:SvenWoltmann/jenkins-tutorial-demo.git'
+                    '-DdeveloperConnectionUrl=scm:git:git@github.com:ahmedamsaleh/jenkins-tutorial-demo.git'
             rootPOM "library1/pom.xml"
         }
     }

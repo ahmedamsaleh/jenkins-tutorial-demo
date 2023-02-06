@@ -1,4 +1,4 @@
-listView('Part II - DSL') {
+listView('Jenkins Tutorial Demo - Part II - DSL') {
     jobs {
         regex '.+\\(DSL\\).*'
     }

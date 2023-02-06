@@ -9,14 +9,14 @@ mavenJob('Jenkins Tutorial Demo - Application 1 (DSL)') {
         gitParam('Branch') {
             description 'The Git branch to checkout'
             type 'BRANCH'
-            defaultValue 'origin/master'
+            defaultValue 'origin/main'
         }
     }
 
     scm {
         git {
             remote {
-                url 'git@gitlab.com:SvenWoltmann/jenkins-tutorial-demo.git'
+                url 'git@github.com:ahmedamsaleh/jenkins-tutorial-demo.git'
             }
 
             branch '$Branch'
