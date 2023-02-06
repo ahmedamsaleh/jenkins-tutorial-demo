@@ -23,7 +23,7 @@ mavenJob('Jenkins Tutorial Demo - Application 1 - Release (DSL)') {
                 url 'git@github.com:ahmedamsaleh/jenkins-tutorial-demo.git'
             }
 
-            branch 'origin/master'
+            branch 'origin/main'
 
             // Add extensions 'SparseCheckoutPaths' and 'PathRestriction'
             def nodeBuilder = NodeBuilder.newInstance()
